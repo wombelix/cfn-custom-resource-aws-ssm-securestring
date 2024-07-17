@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: CloudFormation Custom Resource AWS SSM Parameter Store SecureString
+Upstream-Contact: Dominik Wombacher <dominik@wombacher.cc>
+Source: https://git.sr.ht/~wombelix/cfn-custom-resource-aws-ssm-securestring
+
+# Sample paragraph, commented out:
+#
+# Files: src/*
+# Copyright: $YEAR $NAME <$CONTACT>
+# License: ...

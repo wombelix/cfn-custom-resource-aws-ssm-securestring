@@ -13,9 +13,37 @@ I came up with that while creating and managing AWS infrastructure for some of m
 
 ## Table of Contents
 
+* [Example](#example)
 * [Source](#source)
 * [Contribute](#contribute)
 * [License](#license)
+
+## Example
+
+I use the following Cfn snippet to create an entry in AWS SSM Parameter Store, encrypted with an AWS KMS key. 
+The different values coming from Parameters or other resources from my CloudFormation Stack. 
+
+`ServiceToken` is the `arn` of the custom resource Lambda function that will be triggered.
+
+The rest should be self-explaining, `Name`, `Value` and `Description` will be added to the Parameter Store entry. 
+`KmsKeyId` is the `arn` of the AWS KMS key you want to use to encrypt the the entry.
+
+```
+  IAMUserIACOpenTofuAccessKeyParameterStore:
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      ServiceToken: !Sub arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${CustomResourceLambdaName}
+      Name: !Ref ParameterNameForAccessKey
+      Value: !Ref IAMUserIACOpenTofuAccessKey
+      Description: !Sub "The access key for IAM User ${IAMUserIACOpenTofu}"
+      KmsKeyId: !ImportValue
+                  'Fn::Sub': ${KMSStackName}-KMSKeyBackendEncryptionArn
+      Tags: 
+        - Key: "Environment"
+          Value: "Production"
+        - Key: "Usage"
+          Value: "IAC-OpenTofu"
+```
 
 ## Source
 

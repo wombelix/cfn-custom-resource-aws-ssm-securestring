@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2024 Dominik Wombacher <dominik@wombacher.cc>
 SPDX-License-Identifier: MIT
 -->
 
-# dotfiles
+# CloudFormation Custom Resource AWS SSM Parameter Store SecureString
 
 A custom resource for CloudFormation to interact with SecureString values from AWS SSM Parameter Store. 
 I came up with that while creating and managing AWS infrastructure for some of my side-projects.

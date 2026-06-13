@@ -12,6 +12,9 @@ I came up with that while creating and managing AWS infrastructure for some of m
 [![REUSE status](https://api.reuse.software/badge/git.sr.ht/~wombelix/cfn-custom-resource-aws-ssm-securestring)](https://api.reuse.software/info/git.sr.ht/~wombelix/cfn-custom-resource-aws-ssm-securestring) 
 [![builds.sr.ht status](https://builds.sr.ht/~wombelix/cfn-custom-resource-aws-ssm-securestring.svg)](https://builds.sr.ht/~wombelix/cfn-custom-resource-aws-ssm-securestring?)
 
+## Notice
+
+This project is no longer actively maintained and archived
 
 ## Table of Contents
 
